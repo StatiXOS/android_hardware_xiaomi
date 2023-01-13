@@ -1,0 +1,39 @@
+// Copyright (C) 2020 The LineageOS Project
+// Copyright (C) 2023 StatiXOS
+// SPDX-License-Identifer: Apache-2.0
+
+soong_config_module_type {
+    name: "xiaomi_powershare_hal_rust_defaults",
+    module_type: "rust_defaults",
+    config_namespace: "XIAOMI_POWERSHARE",
+    value_variables: ["WIRELESS_TX_ENABLE_PATH"],
+    properties: ["rustflags"],
+}
+
+xiaomi_powershare_hal_rust_defaults {
+    name: "xiaomi_powershare_hal_defaults",
+    soong_config_variables: {
+        WIRELESS_TX_ENABLE_PATH: {
+            rustflags: ["-D WIRELESS_TX_ENABLE_PATH=\"%s\""],
+        },
+    },
+}
+
+rust_binary {
+    name: "vendor.lineage.powershare-service.xiaomi",
+    defaults: [
+        "xiaomi_powershare_hal_defaults",
+    ],
+    vintf_fragments: ["vendor.lineage.powershare-service.xiaomi.xml"],
+    init_rc: ["vendor.lineage.powershare-service.xiaomi.rc"],
+    relative_install_path: "hw",
+    vendor: true,
+    srcs: [
+        "src/main.rs",
+    ],
+    prefer_rlib: true,
+    rustlibs: [
+        "libbinder_rs",
+        "vendor.lineage.powershare-V1-rust",
+    ],
+}

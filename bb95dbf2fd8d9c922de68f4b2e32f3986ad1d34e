@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a072f14a_94f62f10",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2023-01-26T14:24:25Z",
+      "side": 1,
+      "message": "Comment removed by: Vaisakh Murali; Reason: oops",
+      "revId": "bb95dbf2fd8d9c922de68f4b2e32f3986ad1d34e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}

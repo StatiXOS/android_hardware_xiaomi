@@ -17,13 +17,22 @@
 #pragma once
 
 #include <aidl/android/hardware/vibrator/BnVibrator.h>
+#include <aidl/android/hardware/vibrator/BnVibratorManager.h>
 
 namespace aidl {
 namespace android {
 namespace hardware {
 namespace vibrator {
 
+class VibratorManager : public BnVibratorManager {
+    VibratorManager(std::shared_ptr<IVibrator> vibrator) : mDefaultVibrator(std::move(vibrator)){};
+    ndk::ScopedAStatus getVibrator(std::shared_ptr<IVibrator>* _aidl_return) override;
+    private:
+        std::shared_ptr<IVibrator> mDefaultVibrator;
+};
+
 class Vibrator : public BnVibrator {
+    class VibratorManager vibManager;
     ndk::ScopedAStatus getCapabilities(int32_t* _aidl_return) override;
     ndk::ScopedAStatus off() override;
     ndk::ScopedAStatus on(int32_t timeoutMs,

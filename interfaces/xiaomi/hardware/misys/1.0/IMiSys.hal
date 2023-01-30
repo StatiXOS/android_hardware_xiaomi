@@ -1,0 +1,9 @@
+/*
+ * Copyright (C) 2023 StatiXOS
+ * SPDX-License-Identifer: Apache-2.0
+ */
+
+package vendor.xiaomi.hardware.misys@1.0;
+
+interface IMiSys {
+};

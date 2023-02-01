@@ -1,0 +1,2 @@
+# Vibrator HAL props
+vendor_public_prop(vendor_haptics_prop)

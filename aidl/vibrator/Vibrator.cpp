@@ -7,6 +7,7 @@
 #include "vibrator-impl/Vibrator.h"
 
 #include <android-base/logging.h>
+#include <android-base/properties.h>
 #include <thread>
 #include <map>
 #include <fstream>
@@ -34,33 +35,25 @@ std::map<int, std::string> haptic_nodes = {
 };
 
 static std::string HAPTIC_NODE;
+static std::string HAPTIC_PROP_PREFIX = "ro.vibrator.hal.";
+static std::string HAPTIC_PROP_DURATION = "duration.";
+static std::string HAPTIC_PROP_INDEX = "index.";
 
 // Common haptic nodes
 static std::string ACTIVATE_NODE = "activate";
 static std::string INDEX_NODE = "index";
 static std::string DURATION_NODE = "duration";
 
-// Waveform definitions
-static constexpr uint32_t WAVEFORM_TICK_EFFECT_MS = 10;
-static constexpr uint32_t WAVEFORM_TEXTURE_TICK_EFFECT_MS = 20;
-static constexpr uint32_t WAVEFORM_CLICK_EFFECT_MS = 15;
-static constexpr uint32_t WAVEFORM_HEAVY_CLICK_EFFECT_MS = 30;
-static constexpr uint32_t WAVEFORM_DOUBLE_CLICK_EFFECT_MS = 60;
-static constexpr uint32_t WAVEFORM_THUD_EFFECT_MS = 35;
-static constexpr uint32_t WAVEFORM_POP_EFFECT_MS = 15;
-
-// Select waveform index from firmware through index list
-static constexpr uint32_t WAVEFORM_TICK_EFFECT_INDEX = 1;
-static constexpr uint32_t WAVEFORM_TEXTURE_TICK_EFFECT_INDEX = 4;
-static constexpr uint32_t WAVEFORM_CLICK_EFFECT_INDEX = 2;
-static constexpr uint32_t WAVEFORM_HEAVY_CLICK_EFFECT_INDEX = 5;
-static constexpr uint32_t WAVEFORM_DOUBLE_CLICK_EFFECT_INDEX = 6;
-static constexpr uint32_t WAVEFORM_THUD_EFFECT_INDEX = 7;
-
 template <typename T>
 static void write_haptic_node(const std::string& path, const T& value) {
     std::ofstream file(path);
     file << value;
+}
+
+inline int getProperty(std::string &key) {
+    int value;
+    value = ::android::base::GetIntProperty(HAPTIC_PROP_PREFIX + key, value);
+    return value;
 }
 
 template <typename T>
@@ -127,38 +120,38 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
     switch (effect) {
         case Effect::TICK:
             LOG(INFO) << "Vibrator effect set to TICK";
-            index = WAVEFORM_TICK_EFFECT_INDEX;
-            timeMs = WAVEFORM_TICK_EFFECT_MS;
+            index = getProperty(HAPTIC_PROP_INDEX + "tick");
+            timeMs = getProperty(HAPTIC_PROP_DURATION + "tick");
             break;
         case Effect::TEXTURE_TICK:
             LOG(INFO) << "Vibrator effect set to TEXTURE_TICK";
-            index = WAVEFORM_TEXTURE_TICK_EFFECT_INDEX;
-            timeMs = WAVEFORM_TEXTURE_TICK_EFFECT_MS;
+            index = getProperty(HAPTIC_PROP_INDEX + "texure_tick");
+            timeMs = getProperty(HAPTIC_PROP_DURATION + "texture_tick");
             break;
         case Effect::CLICK:
             LOG(INFO) << "Vibrator effect set to CLICK";
-            index = WAVEFORM_CLICK_EFFECT_INDEX;
-            timeMs = WAVEFORM_CLICK_EFFECT_MS;
+            index = getProperty(HAPTIC_PROP_INDEX + "click");
+            timeMs = getProperty(HAPTIC_PROP_DURATION + "click");
             break;
         case Effect::HEAVY_CLICK:
             LOG(INFO) << "Vibrator effect set to HEAVY_CLICK";
-            index = WAVEFORM_HEAVY_CLICK_EFFECT_INDEX;
-            timeMs = WAVEFORM_HEAVY_CLICK_EFFECT_MS;
+            index = getProperty(HAPTIC_PROP_INDEX + "heavy_click");
+            timeMs = getProperty(HAPTIC_PROP_DURATION + "heavy_click");
             break;
         case Effect::DOUBLE_CLICK:
             LOG(INFO) << "Vibrator effect set to DOUBLE_CLICK";
-            index = WAVEFORM_DOUBLE_CLICK_EFFECT_INDEX;
-            timeMs = WAVEFORM_DOUBLE_CLICK_EFFECT_MS;
+            index = getProperty(HAPTIC_PROP_INDEX + "double_click");
+            timeMs = getProperty(HAPTIC_PROP_DURATION + "double_click");
             break;
         case Effect::THUD:
             LOG(INFO) << "Vibrator effect set to THUD";
-            index = WAVEFORM_THUD_EFFECT_INDEX;
-            timeMs = WAVEFORM_THUD_EFFECT_MS;
+            index = getProperty(HAPTIC_PROP_INDEX + "thud");
+            timeMs = getProperty(HAPTIC_PROP_DURATION + "thud");
             break;
         case Effect::POP:
             LOG(INFO) << "Vibrator effect set to POP";
-            index = WAVEFORM_TICK_EFFECT_INDEX;
-            timeMs = WAVEFORM_POP_EFFECT_MS;
+            index = getProperty(HAPTIC_PROP_INDEX + "pop");
+            timeMs = getProperty(HAPTIC_PROP_DURATION + "pop");
             break;
         default:
             return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);

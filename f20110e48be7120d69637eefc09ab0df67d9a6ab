@@ -34,6 +34,24 @@
       "parentUuid": "252a22c8_c383d711",
       "revId": "f20110e48be7120d69637eefc09ab0df67d9a6ab",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a48ee8c_6beef3fa",
+        "filename": "sepolicy/vibrator/property.te",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2023-02-02T12:03:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32645cf2_3d520ebf",
+      "revId": "f20110e48be7120d69637eefc09ab0df67d9a6ab",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }

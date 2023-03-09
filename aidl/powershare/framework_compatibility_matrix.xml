@@ -2,6 +2,7 @@
     <hal format="aidl" optional="true">
         <name>vendor.lineage.powershare</name>
         <version>1</version>
-        <fqname>IPowerShare/default</fqname>
+        <name>IPowerShare</name>
+        <instance>default</instance>
     </hal>
 </compatibility-matrix>

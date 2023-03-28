@@ -34,6 +34,11 @@ std::map<int, std::string> haptic_nodes = {
     {13, "/sys/bus/i2c/drivers/aw86927_haptic/3-005a/"},
 };
 
+// Definitions
+#define GAIN_LIGHT         0x3fff
+#define GAIN_MEDIUM        0x5fff
+#define GAIN_STRONG        0x7fff
+
 static std::string HAPTIC_NODE;
 static std::string HAPTIC_PROP_PREFIX = "vendor.vibrator.hal.";
 static std::string HAPTIC_PROP_DURATION = "duration.";
@@ -45,6 +50,7 @@ static std::string HAPTIC_PROP_MODE="mode.";
 static std::string ACTIVATE_NODE = "activate";
 static std::string ACTIVATE_MODE_NODE = "activate_mode";
 static std::string EFFECT_ID_NODE = "effect_id";
+static std::string GAIN_NODE = "gain";
 static std::string INDEX_NODE = "index";
 static std::string DURATION_NODE = "duration";
 
@@ -110,6 +116,7 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
     uint32_t index = 0;
     uint32_t timeMs = 0;
     uint32_t activate_mode = 1;
+    uint32_t gain = 30; // Minimum value is 30
     uint32_t effect_id = 0;
     std::ofstream stream;
 
@@ -123,6 +130,21 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
     }
 
     LOG(INFO) << "Vibrator perform";
+
+    switch (strength) {
+        case EffectStrength::LIGHT:
+            gain = GAIN_LIGHT;
+            break;
+        case EffectStrength::MEDIUM:
+            gain = GAIN_MEDIUM;
+            break;
+        case EffectStrength::STRONG:
+            gain = GAIN_STRONG;
+            break;
+        default:
+            status = ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+            break;
+    }
 
     switch (effect) {
         case Effect::TICK:
@@ -203,6 +225,9 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
     /* Setup effect index */
     write_haptic_node(HAPTIC_NODE + INDEX_NODE, index);
 
+    /* Setup gain */
+    write_haptic_node(HAPTIC_NODE + GAIN_NODE, gain);
+
     if (callback != nullptr) {
         std::thread([callback, timeMs] {
             usleep(timeMs * 1000);
@@ -234,7 +259,22 @@ ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* _aidl_retu
 }
 
 ndk::ScopedAStatus Vibrator::setAmplitude(float amplitude) {
-    return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+    float gain;
+
+    for (auto& i: haptic_nodes) {
+        std::string triggerNode = i.second + ACTIVATE_NODE;
+        if (!openNoCreate(triggerNode, &stream))
+            continue;
+        else
+            HAPTIC_NODE = i.second;
+            break;
+    }
+
+    gain = amplitude * (STRONG_MAGNITUDE - LIGHT_MAGNITUDE) / 255;
+
+    write_haptic_node(HAPTIC_NODE + GAIN_NODE, gain);
+
+    return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus Vibrator::setExternalControl(bool enabled) {

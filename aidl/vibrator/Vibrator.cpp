@@ -71,7 +71,7 @@ static bool openNoCreate(const std::string &file, T *outStream) {
     // Force 'in' mode to prevent file creation
     outStream->open(file, mode | std::ios_base::in);
     if (!*outStream) {
-        LOG(ERROR) << "Failed to open %s (%d): %s" << file.c_str(), errno, strerror(errno);
+        LOG(VERBOSE) << "Failed to open %s (%d): %s" << file.c_str(), errno, strerror(errno);
         return false;
     }
     return true;

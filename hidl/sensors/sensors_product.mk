@@ -4,6 +4,7 @@
 #
 
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.xiaomi-multihal
+    android.hardware.sensors@2.1-service.xiaomi-multihal \
+    sensors.xiaomi
 
 BOARD_VENDOR_SEPOLICY_DIRS += vendor/hardware/xiaomi/sepolicy/sensors

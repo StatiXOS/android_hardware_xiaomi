@@ -69,3 +69,23 @@ on fs
     chown system system /sys/bus/i2c/drivers/aw86927_haptic/3-005a/duration
     chown system system /sys/bus/i2c/drivers/aw86927_haptic/3-005a/effect_id
     chown system system /sys/bus/i2c/drivers/aw86927_haptic/3-005a/index
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/0-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/0-005a/activate_mode
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/0-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/0-005a/effect_id
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/0-005a/index
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/1-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/1-005a/activate_mode
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/1-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/1-005a/effect_id
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/1-005a/index
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/2-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/2-005a/activate_mode
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/2-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/2-005a/effect_id
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/2-005a/index
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/3-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/3-005a/activate_mode
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/3-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/3-005a/effect_id
+    chown system system /sys/bus/i2c/drivers/aw8624_haptic/3-005a/index

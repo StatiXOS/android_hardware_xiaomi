@@ -5,3 +5,5 @@
 
 PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi-libperfmgr
+
+BOARD_VENDOR_SEPOLICY_DIRS += vendor/hardware/xiaomi/sepolicy/power-libperfmgr

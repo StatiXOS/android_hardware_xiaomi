@@ -5,3 +5,5 @@
 
 # Xiaomi Touch
 TARGET_POWERHAL_MODE_EXT := vendor/hardware/xiaomi/aidl/xiaomi-touch/xiaomi-touch.cpp
+
+BOARD_VENDOR_SEPOLICY_DIRS += vendor/hardware/xiaomi/sepolicy/xiaomi-touch

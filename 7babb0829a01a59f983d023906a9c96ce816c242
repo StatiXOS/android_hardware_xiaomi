@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae9f9977_f1187c9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2024-05-03T14:30:19Z",
+      "side": 1,
+      "message": "Fixes:\nbuild/make/core/base_rules.mk:544: error: overriding commands for target `/mnt/out/target/product/yunluo/vendor/etc/vintf/manifest/android.hardware.sensors@2.1-multihal.xml\u0027, previously defined at build/make/core/base_rules.mk:544",
+      "revId": "7babb0829a01a59f983d023906a9c96ce816c242",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}

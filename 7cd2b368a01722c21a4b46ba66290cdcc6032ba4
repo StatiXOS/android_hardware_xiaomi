@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eab37d1d_10c911bc",
+        "filename": "interfaces/xiaomi/hardware/stylus/1/IStylusControl.aidl",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-26T17:45:19Z",
+      "side": 1,
+      "message": "is there a better name for this?",
+      "range": {
+        "startLine": 6,
+        "startChar": 12,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "7cd2b368a01722c21a4b46ba66290cdcc6032ba4",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}

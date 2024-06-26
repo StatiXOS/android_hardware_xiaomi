@@ -1,0 +1,19 @@
+// Copyright (C) 2020 The LineageOS Project
+// Copyright (C) 2023 StatiXOS
+// SPDX-License-Identifer: Apache-2.0
+
+rust_binary {
+    name: "vendor.xiaomi.hardware.stylus-service",
+    vintf_fragments: ["vendor.xiaomi.hardware.stylus-service.xml"],
+    init_rc: ["vendor.xiaomi.hardware.stylus-service.rc"],
+    relative_install_path: "hw",
+    vendor: true,
+    srcs: [
+        "src/main.rs",
+    ],
+    prefer_rlib: true,
+    rustlibs: [
+        "libbinder_rs",
+        "vendor.xiaomi.hardware.stylus-V1-rust",
+    ],
+}

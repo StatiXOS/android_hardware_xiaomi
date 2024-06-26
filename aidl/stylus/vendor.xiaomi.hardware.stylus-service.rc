@@ -1,0 +1,4 @@
+service vendor.stylus-hal-xiaomi /vendor/bin/hw/vendor.xiaomi.hardware.stylus-service
+    class hal
+    user system
+    group system

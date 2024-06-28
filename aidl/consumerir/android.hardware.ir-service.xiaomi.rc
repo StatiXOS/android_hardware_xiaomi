@@ -1,0 +1,4 @@
+service vendor.ir-xiaomi /vendor/bin/hw/android.hardware.ir-service.xiaomi
+    class hal
+    user system
+    group system

@@ -8,3 +8,5 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.xiaomi
+
+BOARD_VENDOR_SEPOLICY_DIRS += vendor/hardware/xiaomi/sepolicy/consumerir

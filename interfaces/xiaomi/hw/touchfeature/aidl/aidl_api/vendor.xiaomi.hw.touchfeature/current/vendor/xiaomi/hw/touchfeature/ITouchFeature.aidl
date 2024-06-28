@@ -16,8 +16,16 @@
 // with such a backward incompatible change, it has a high risk of breaking
 // later when a module using the interface is updated, e.g., Mainline modules.
 
-package vendor.xiaomi.hardware.fingerprintextension;
+package vendor.xiaomi.hw.touchfeature;
 @VintfStability
-interface IXiaomiFingerprint {
-  int extCmd(int cmd, int param1);
+interface ITouchFeature {
+  int getModeCurValueString(int touchId, int mode);
+  int getModeValues(int touchId, int mode);
+  int getTouchModeCurValue(int touchId, int mode);
+  int getTouchModeDefValue(int touchId, int mode);
+  int getTouchModeMaxValue(int touchId, int mode);
+  int getTouchModeMinValue(int touchId, int mode);
+  boolean resetTouchMode(int touchId, int mode);
+  boolean setEdgeMode(int touchId, int mode, in int[] value, int length);
+  boolean setTouchMode(int touchId, int mode, int value);
 }

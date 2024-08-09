@@ -16,6 +16,24 @@
       "message": "Is AOSP IR aidl not usable?",
       "revId": "6cdd7847ef97cc6b6b73948919b7ff342ca73454",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67df28f4_c4ad1fee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-08-09T10:26:25Z",
+      "side": 1,
+      "message": "some devices ximi need this",
+      "parentUuid": "6b62a9c9_5071609d",
+      "revId": "6cdd7847ef97cc6b6b73948919b7ff342ca73454",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }

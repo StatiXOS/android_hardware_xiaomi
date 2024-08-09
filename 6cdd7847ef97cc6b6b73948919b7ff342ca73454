@@ -38,6 +38,75 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a95d9e6b_6f17c3c3",
+        "filename": "aidl/consumerir/ir.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-09T18:41:12Z",
+      "side": 1,
+      "message": "make these public, it\u0027s fine",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 10
+      },
+      "revId": "6cdd7847ef97cc6b6b73948919b7ff342ca73454",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8be15872_8d8f0f17",
+        "filename": "aidl/consumerir/main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-09T18:41:12Z",
+      "side": 1,
+      "message": "constexpr",
+      "range": {
+        "startLine": 30,
+        "startChar": 7,
+        "endLine": 30,
+        "endChar": 12
+      },
+      "revId": "6cdd7847ef97cc6b6b73948919b7ff342ca73454",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69abfbeb_943f2039",
+        "filename": "aidl/consumerir/main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-09T18:41:12Z",
+      "side": 1,
+      "message": "const",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "6cdd7847ef97cc6b6b73948919b7ff342ca73454",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "001c86b1_ec48f19e",
         "filename": "aidl/consumerir/main.cpp",
         "patchSetId": 5
@@ -54,6 +123,29 @@
         "startChar": 0,
         "endLine": 98,
         "endChar": 43
+      },
+      "revId": "6cdd7847ef97cc6b6b73948919b7ff342ca73454",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb6d357b_878a125b",
+        "filename": "aidl/consumerir/main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-09T18:41:12Z",
+      "side": 1,
+      "message": "why this?",
+      "range": {
+        "startLine": 104,
+        "startChar": 29,
+        "endLine": 104,
+        "endChar": 44
       },
       "revId": "6cdd7847ef97cc6b6b73948919b7ff342ca73454",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"

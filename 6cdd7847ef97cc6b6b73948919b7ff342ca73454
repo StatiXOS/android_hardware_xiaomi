@@ -107,6 +107,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "92cccaa0_39a3a5cd",
+        "filename": "aidl/consumerir/main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-08-12T20:01:17Z",
+      "side": 1,
+      "message": "I just copy pasta\u0027d what was there on HIDL",
+      "parentUuid": "69abfbeb_943f2039",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "6cdd7847ef97cc6b6b73948919b7ff342ca73454",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "001c86b1_ec48f19e",
         "filename": "aidl/consumerir/main.cpp",
         "patchSetId": 5
@@ -130,6 +154,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e8d02352_2b6b1735",
+        "filename": "aidl/consumerir/main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-08-12T20:01:17Z",
+      "side": 1,
+      "message": "no existo in aosp",
+      "parentUuid": "001c86b1_ec48f19e",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 43
+      },
+      "revId": "6cdd7847ef97cc6b6b73948919b7ff342ca73454",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cb6d357b_878a125b",
         "filename": "aidl/consumerir/main.cpp",
         "patchSetId": 5
@@ -141,6 +189,30 @@
       "writtenOn": "2024-08-09T18:41:12Z",
       "side": 1,
       "message": "why this?",
+      "range": {
+        "startLine": 104,
+        "startChar": 29,
+        "endLine": 104,
+        "endChar": 44
+      },
+      "revId": "6cdd7847ef97cc6b6b73948919b7ff342ca73454",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5ed1184_113006c6",
+        "filename": "aidl/consumerir/main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2024-08-12T20:01:17Z",
+      "side": 1,
+      "message": "that\u0027s how it is in aosp example impl",
+      "parentUuid": "cb6d357b_878a125b",
       "range": {
         "startLine": 104,
         "startChar": 29,
